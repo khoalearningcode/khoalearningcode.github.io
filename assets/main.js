@@ -20,8 +20,8 @@ themeButton?.addEventListener('click', () => {
 });
 document.querySelector('#copy-email')?.addEventListener('click', async () => {
   const status = document.querySelector('#copy-status');
-  try { await navigator.clipboard.writeText('minhkhoaae@gmail.com'); status.textContent = 'Email copied.'; }
-  catch { status.textContent = 'minhkhoaae@gmail.com'; }
+  try { await navigator.clipboard.writeText('godminhkhoa@gmail.com'); status.textContent = 'Email copied.'; }
+  catch { status.textContent = 'godminhkhoa@gmail.com'; }
 });
 const cards = [...document.querySelectorAll('.activity-card')];
 const filterLabels = { all: 'All work', research: 'Research', industry: 'Industry', 'self-project': 'Self Project', challenge: 'Challenge' };
