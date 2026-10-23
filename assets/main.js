@@ -33,6 +33,8 @@ function applyWorkFilter(category, updateUrl = false) {
     card.hidden = category !== 'all' && card.dataset.category !== category;
     if (!card.hidden) { count++; card.classList.add('in-view'); }
   });
+  const emptyState = document.querySelector('.work-empty');
+  if (emptyState) emptyState.hidden = count !== 0;
   const status = document.querySelector('#filter-status');
   if (status) status.textContent = `${filterLabels[category]} · ${count} ${count === 1 ? 'entry' : 'entries'}`;
   if (updateUrl) {
