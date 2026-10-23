@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Portrait placeholder">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1b2140"/><stop offset="1" stop-color="#2a2f63"/></linearGradient>
+<radialGradient id="glow" cx=".3" cy=".25" r=".7"><stop offset="0" stop-color="#7c8cff" stop-opacity=".45"/><stop offset="1" stop-color="#7c8cff" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="1000" fill="url(#bg)"/><rect width="800" height="1000" fill="url(#glow)"/>
+<circle cx="400" cy="400" r="130" fill="#aab4ff" fill-opacity=".35"/>
+<path d="M130 1000c0-190 120-300 270-300s270 110 270 300z" fill="#aab4ff" fill-opacity=".35"/>
+<text x="400" y="880" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="30" fill="#dbe3ff" fill-opacity=".85">Portrait placeholder</text>
+<text x="400" y="925" text-anchor="middle" font-family="DM Sans,Arial,sans-serif" font-size="22" fill="#dbe3ff" fill-opacity=".55">replace with assets/portrait.jpg · 4:5</text>
+</svg>
