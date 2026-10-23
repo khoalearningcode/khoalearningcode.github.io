@@ -45,7 +45,7 @@ dialog?.addEventListener('click', event => { if (event.target === dialog) { cons
 dialog?.addEventListener('close', () => dialogTrigger?.focus());
 if (!reducedMotion && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } }), { threshold: 0.08 });
-  document.querySelectorAll('.section-heading,.project-card,.publication,.research-bottom,.artifact,.experience article,.education,.case-body section').forEach(element => { element.classList.add('reveal-ready'); observer.observe(element); });
+  document.querySelectorAll('.section-heading,.channel-card,.channel-project,.timeline-entry,.career-panel,.profile-facts,.case-body section').forEach(element => { element.classList.add('reveal-ready'); observer.observe(element); });
 }
 const progress = document.createElement('div'); progress.className = 'page-progress'; progress.setAttribute('aria-hidden','true'); document.body.append(progress);
 let scrollPending = false;
@@ -57,3 +57,9 @@ function updateScroll() {
 }
 addEventListener('scroll', () => { if (!scrollPending) { requestAnimationFrame(updateScroll); scrollPending = true; } }, { passive: true });
 updateScroll();
+
+const route = location.pathname.split('/').pop();
+if (route === 'career.html') document.querySelectorAll('nav a').forEach(a => { if (a.textContent === 'Career') a.setAttribute('aria-current','page'); });
+if (location.pathname.includes('/channels/') || location.pathname.includes('/projects/')) {
+  document.querySelectorAll('nav a').forEach(a => { if (a.textContent === 'Work') a.setAttribute('aria-current','page'); });
+}
