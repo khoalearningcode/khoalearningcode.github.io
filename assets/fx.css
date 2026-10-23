@@ -50,6 +50,15 @@ html[data-theme=light] .hero::before{opacity:.35}
 .fx-cursor.on{opacity:1}
 main,header,footer{position:relative;z-index:1}
 
+/* Solution / Framework / Evidence figure stack on challenge case studies */
+.figure-stack{display:flex;flex-direction:column;gap:56px;margin-bottom:20px}
+.figure-stack .figure-step{margin:0}
+.figure-step .eyebrow{color:var(--blue)}
+.figure-step .zoom-image{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.figure-step img{width:100%;height:auto;max-height:none;border:1px solid var(--line);border-radius:12px}
+.figure-step figcaption{max-width:1050px}
+@media(max-width:640px){.figure-stack{gap:40px}}
+
 /* Career dots glow */
 .career-glance a:before,.timeline-entry:before{animation:fx-pulse 3s infinite}
 

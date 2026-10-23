@@ -14,3 +14,10 @@
 - SVG and PNG were exported with the official draw.io Desktop 32.5.5 CLI, in light theme. SVGs embed editable diagram data.
 - Figures contain schematic tokens and plate strings, not organizer dataset images.
 - Result tables are transcribed from repository records / the supplied paper, not independently rerun experiments.
+
+## Solution / framework / evidence figures, 2026-10-24
+
+- `lrlpr-{solution,framework,evidence}.{png,drawio}` from `khoalearningcode/lrlpr26-plate-recognition`, `assets/figures/`, commit "docs: add solution/framework/evidence figures, update README" (2026-10-23).
+- `vitnumchart-{solution,framework,evidence}.{png,drawio}` from `khoalearningcode/vitnumchart-vlsp2026`, `assets/figures/`, same commit title (2026-10-23).
+- They replace `*-architecture.*` on the challenge case studies and home cards; the old architecture files are no longer referenced.
+- Frames, plate strings, questions and probabilities in the figures are illustrative, not organizer data.
