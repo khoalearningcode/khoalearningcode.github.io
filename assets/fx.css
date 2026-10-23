@@ -94,3 +94,7 @@ body.motion-paused .paper-feature.fx-tilt,body.motion-paused .paper-feature.fx-t
 .portrait-frame img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform .5s}
 .paper-feature:hover .portrait-frame img{transform:scale(1.03)}
 @media(max-width:640px){.portrait-frame{max-height:420px}}
+
+/* Challenge cards show the competition cover */
+.activity-card[href$="vitnumchart.html"] .activity-image.original-media{background:#fcfbf4}
+.activity-card[href$="lrlpr.html"] .activity-image.original-media img{padding:6px 0}
