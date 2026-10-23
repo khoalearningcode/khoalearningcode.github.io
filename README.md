@@ -8,8 +8,10 @@ Content is based on the supplied CV and project README files. MonoLaDN acceptanc
 
 ## Site structure
 
-- `index.html`: overview, career preview and three work-channel entry points.
-- `career.html`: professional timeline with a separate education and milestones column.
-- `channels/`: AI Systems, Multimodal Reasoning, Vision & Efficient Inference.
-- `projects/`: individual case studies linked to their parent channel.
+- `index.html`: overview, career preview, and work filtered by activity type.
+- `career.html`: professional timeline, education, and milestones.
+- Work categories: Research / Industry / Self Project / Challenge.
+- `projects/`: individual case studies, returning to their selected category.
+- Filter selections are shareable through `?filter=research#work` and equivalent category links.
+- Legacy `channels/` URLs redirect to the filtered work section.
 - Shared navigation: About / Career / Work / Contact.

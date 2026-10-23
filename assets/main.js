@@ -23,13 +23,29 @@ document.querySelector('#copy-email')?.addEventListener('click', async () => {
   try { await navigator.clipboard.writeText('minhkhoaae@gmail.com'); status.textContent = 'Email copied.'; }
   catch { status.textContent = 'minhkhoaae@gmail.com'; }
 });
-const cards = [...document.querySelectorAll('.project-card')];
-document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+const cards = [...document.querySelectorAll('.activity-card')];
+const filterLabels = { all: 'All work', research: 'Research', industry: 'Industry', 'self-project': 'Self Project', challenge: 'Challenge' };
+function applyWorkFilter(category, updateUrl = false) {
+  if (!Object.hasOwn(filterLabels, category)) category = 'all';
+  document.querySelectorAll('[data-filter]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
   let count = 0;
-  cards.forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.category !== button.dataset.filter; if (!card.hidden) { count++; card.classList.add('in-view'); } });
-  document.querySelector('#filter-status').textContent = `${count} projects shown.`;
-}));
+  cards.forEach(card => {
+    card.hidden = category !== 'all' && card.dataset.category !== category;
+    if (!card.hidden) { count++; card.classList.add('in-view'); }
+  });
+  const status = document.querySelector('#filter-status');
+  if (status) status.textContent = `${filterLabels[category]} · ${count} ${count === 1 ? 'entry' : 'entries'}`;
+  if (updateUrl) {
+    const url = new URL(location.href);
+    if (category === 'all') url.searchParams.delete('filter'); else url.searchParams.set('filter', category);
+    url.hash = 'work';
+    history.replaceState(null, '', url);
+  }
+}
+if (cards.length) {
+  applyWorkFilter(new URLSearchParams(location.search).get('filter') || 'all');
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => applyWorkFilter(button.dataset.filter, true)));
+}
 const dialog = document.querySelector('.image-dialog');
 let dialogTrigger;
 document.querySelectorAll('.zoom-image').forEach(button => button.addEventListener('click', () => {
@@ -45,7 +61,7 @@ dialog?.addEventListener('click', event => { if (event.target === dialog) { cons
 dialog?.addEventListener('close', () => dialogTrigger?.focus());
 if (!reducedMotion && 'IntersectionObserver' in window) {
   const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } }), { threshold: 0.08 });
-  document.querySelectorAll('.section-heading,.channel-card,.channel-project,.timeline-entry,.career-panel,.profile-facts,.case-body section').forEach(element => { element.classList.add('reveal-ready'); observer.observe(element); });
+  document.querySelectorAll('.section-heading,.activity-card,.timeline-entry,.career-panel,.profile-facts,.case-body section').forEach(element => { element.classList.add('reveal-ready'); observer.observe(element); });
 }
 const progress = document.createElement('div'); progress.className = 'page-progress'; progress.setAttribute('aria-hidden','true'); document.body.append(progress);
 let scrollPending = false;
