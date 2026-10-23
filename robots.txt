@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://khoalearningcode.github.io/sitemap.xml
