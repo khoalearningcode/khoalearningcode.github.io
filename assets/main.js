@@ -1,9 +1,10 @@
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let motionPaused = reducedMotion;
+try { if (localStorage.getItem('khoa-motion') === 'paused') motionPaused = true; } catch {}
 const motionButton = document.querySelector('.motion-toggle');
 function updateMotion() { document.body.classList.toggle('motion-paused', motionPaused); motionButton?.setAttribute('aria-pressed', String(motionPaused)); motionButton?.setAttribute('aria-label', motionPaused ? 'Resume decorative motion' : 'Pause decorative motion'); if (motionButton) motionButton.textContent = motionPaused ? '▷ Motion' : 'Ⅱ Motion'; }
 updateMotion();
-motionButton?.addEventListener('click', () => { motionPaused = !motionPaused; updateMotion(); });
+motionButton?.addEventListener('click', () => { motionPaused = !motionPaused; updateMotion(); try { localStorage.setItem('khoa-motion', motionPaused ? 'paused' : 'on'); } catch {} });
 const themeButton = document.querySelector('.theme-toggle');
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
@@ -61,10 +62,6 @@ document.querySelectorAll('.zoom-image').forEach(button => button.addEventListen
 dialog?.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
 dialog?.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
 dialog?.addEventListener('close', () => dialogTrigger?.focus());
-if (!reducedMotion && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } }), { threshold: 0.08 });
-  document.querySelectorAll('.section-heading,.activity-card,.timeline-entry,.career-panel,.profile-facts,.case-body section').forEach(element => { element.classList.add('reveal-ready'); observer.observe(element); });
-}
 const progress = document.createElement('div'); progress.className = 'page-progress'; progress.setAttribute('aria-hidden','true'); document.body.append(progress);
 let scrollPending = false;
 function updateScroll() {

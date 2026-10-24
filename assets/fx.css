@@ -1,21 +1,18 @@
 /* Visual effects layer: loaded last, purely additive. Motion is disabled by .motion-paused or prefers-reduced-motion. */
-.fx-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform:scaleX(var(--p,0));transform-origin:0 50%;background:linear-gradient(90deg,var(--blue),#a78bfa,#22d3ee);pointer-events:none}
 
 html,body{overflow-x:clip}
 /* Hero: drifting aurora + faint grid */
 .hero{position:relative;isolation:isolate}
-.hero::before{content:'';position:absolute;inset:-8% -6%;z-index:-2;pointer-events:none;filter:blur(46px);opacity:.55;background:radial-gradient(38% 42% at 18% 30%,#6d7dff55,transparent 70%),radial-gradient(34% 40% at 82% 24%,#22d3ee38,transparent 70%),radial-gradient(40% 46% at 64% 86%,#a78bfa3d,transparent 70%);animation:fx-aurora 18s ease-in-out infinite alternate}
+.hero::before{content:'';position:absolute;inset:-8% -6%;z-index:-2;pointer-events:none;filter:blur(46px);opacity:.38;background:radial-gradient(38% 42% at 18% 30%,#6d7dff55,transparent 70%),radial-gradient(34% 40% at 82% 24%,#22d3ee38,transparent 70%),radial-gradient(40% 46% at 64% 86%,#a78bfa3d,transparent 70%);animation:fx-aurora 18s ease-in-out infinite alternate}
 .hero::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;opacity:.35;-webkit-mask-image:radial-gradient(70% 70% at 50% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(70% 70% at 50% 40%,#000 20%,transparent 75%)}
 html[data-theme=light] .hero::before{opacity:.35}
 @keyframes fx-aurora{0%{transform:translate3d(-2%,0,0) scale(1)}100%{transform:translate3d(3%,-3%,0) scale(1.12)}}
 
-.hero h1 em{background:linear-gradient(90deg,var(--blue),#a78bfa,#22d3ee,var(--blue));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:fx-shift 7s linear infinite}
-@keyframes fx-shift{to{background-position:220% center}}
+.hero h1 em{background:linear-gradient(90deg,var(--blue),#a78bfa,#22d3ee,var(--blue));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .hero-copy>*{animation:fx-up .8s cubic-bezier(.2,.7,.2,1) both}
 .hero-copy>:nth-child(2){animation-delay:.08s}.hero-copy>:nth-child(3){animation-delay:.16s}.hero-copy>:nth-child(4){animation-delay:.26s}.hero-copy>:nth-child(5){animation-delay:.36s}.hero-copy>:nth-child(6){animation-delay:.46s}
-.paper-feature{animation:fx-up 1s .25s cubic-bezier(.2,.7,.2,1) both,fx-float 7s 1.3s ease-in-out infinite}
+.paper-feature{animation:fx-up 1s .25s cubic-bezier(.2,.7,.2,1) both}
 @keyframes fx-up{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
-@keyframes fx-float{0%,100%{translate:0 0}50%{translate:0 -9px}}
 .status-dot{box-shadow:0 0 0 0 var(--blue);animation:fx-pulse 2.2s infinite}
 @keyframes fx-pulse{0%{box-shadow:0 0 0 0 #6d7dff99}70%{box-shadow:0 0 0 9px #6d7dff00}100%{box-shadow:0 0 0 0 #6d7dff00}}
 
@@ -33,7 +30,7 @@ html[data-theme=light] .hero::before{opacity:.35}
 .proof-strip span{display:block;margin-top:6px;font-size:12px;color:var(--muted);line-height:1.6}
 
 /* Reveal on scroll (classes are added by JS, so content stays visible without it) */
-.fx-reveal{opacity:0;translate:0 34px;transition:opacity .8s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.fx-reveal{opacity:0;translate:0 18px;transition:opacity .6s ease-out,translate .6s ease-out;transition-delay:var(--d,0s)}
 .fx-reveal.fx-in{opacity:1;translate:0 0}
 
 /* Tilt + spotlight on cards */
@@ -45,9 +42,6 @@ html[data-theme=light] .hero::before{opacity:.35}
 .fx-tilt:hover::after{opacity:1}
 .activity-card:hover{box-shadow:0 26px 60px #0000003d,0 0 0 1px #8ea4ed40}
 
-/* Soft cursor glow */
-.fx-cursor{position:fixed;left:0;top:0;width:480px;height:480px;margin:-240px 0 0 -240px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,#7c8cff1f,transparent 65%);opacity:0;transition:opacity .4s;will-change:transform}
-.fx-cursor.on{opacity:1}
 main,header,footer{position:relative;z-index:1}
 
 /* "About the challenge" block on challenge case studies */
@@ -75,12 +69,10 @@ main,header,footer{position:relative;z-index:1}
 .figure-step figcaption{max-width:1050px}
 @media(max-width:640px){.figure-stack{gap:40px}}
 
-/* Career dots glow */
-.career-glance a:before,.timeline-entry:before{animation:fx-pulse 3s infinite}
 
 @media(max-width:900px){.proof-strip{grid-template-columns:1fr 1fr;padding-bottom:50px}}
-@media(max-width:640px){.proof-strip{gap:10px;padding:0 6% 40px}.proof-strip>div{padding:16px}.proof-strip strong{font-size:22px}.fx-cursor{display:none}.paper-feature{animation:fx-up 1s .25s both}}
-@media(hover:none){.fx-cursor{display:none}}
+@media(max-width:640px){.proof-strip{gap:10px;padding:0 6% 40px}.proof-strip>div{padding:16px}.proof-strip strong{font-size:22px}.paper-feature{animation:fx-up 1s .25s both}}
+
 
 /* Motion off: static, fully visible */
 body.motion-paused .hero::before,body.motion-paused .hero h1 em,body.motion-paused .paper-feature,body.motion-paused .status-dot,body.motion-paused .career-glance a:before,body.motion-paused .timeline-entry:before,body.motion-paused .hero-copy>*{animation:none}
@@ -98,3 +90,16 @@ body.motion-paused .paper-feature.fx-tilt,body.motion-paused .paper-feature.fx-t
 /* Challenge cards show the competition cover */
 .activity-card[href$="vitnumchart.html"] .activity-image.original-media{background:#fcfbf4}
 .activity-card[href$="lrlpr.html"] .activity-image.original-media img{padding:6px 0}
+
+/* Header tools: motion + theme toggles */
+.header-tools{display:flex;align-items:center;gap:10px}
+.motion-toggle{height:38px;padding:0 13px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:12px;font-weight:550;cursor:pointer;white-space:nowrap;transition:border-color .2s,color .2s}
+.motion-toggle:hover{border-color:var(--blue);color:var(--blue)}
+.motion-toggle[aria-pressed=true]{color:var(--blue)}
+@media(max-width:640px){.motion-toggle{height:33px;width:33px;padding:0;font-size:0}.motion-toggle::before{content:'Ⅱ';font-size:14px}.motion-toggle[aria-pressed=true]::before{content:'▷'}.header-tools{gap:6px}header nav{gap:13px}}
+
+/* Readable small text (labels, captions, footnotes) */
+.eyebrow,.profile-facts span,.career-glance span,.timeline-date,.entry-kind,.challenge-facts span,.career-panel article>span{font-size:11.5px}
+.paper-feature-top,.paper-feature-top .badge,.card-results span,.activity-copy small,.profile-facts small,.rank-footnote,.timeline-note,.evidence-note,.result-stats span,.category-pill,.activity-image>span,.filter-summary,.proof-strip span{font-size:12.5px}
+.card-results span{line-height:1.4}
+@media(max-width:640px){.paper-feature-top,.paper-feature-top .badge,.card-results span,.activity-copy small,.rank-footnote,.evidence-note,.result-stats span,.category-pill,.filter-summary{font-size:12px}.eyebrow{font-size:11px}}

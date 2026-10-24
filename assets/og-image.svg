@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7c8cff"/><stop offset=".55" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+<radialGradient id="g1" cx=".15" cy=".2" r=".6"><stop offset="0" stop-color="#6d7dff" stop-opacity=".45"/><stop offset="1" stop-color="#6d7dff" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx=".9" cy=".85" r=".55"><stop offset="0" stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient></defs>
+<rect width="1200" height="630" fill="#0b0d14"/><rect width="1200" height="630" fill="url(#g1)"/><rect width="1200" height="630" fill="url(#g2)"/>
+<rect x="80" y="86" width="64" height="6" rx="3" fill="url(#a)"/>
+<text x="80" y="160" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" letter-spacing="4" fill="#94a9ff">AI ENGINEER &amp; MULTIMODAL RESEARCH</text>
+<text x="80" y="300" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="104" font-weight="700" fill="#f4f6ff">Cao Lê Minh</text>
+<text x="80" y="408" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="104" font-weight="700" fill="url(#a)">Khoa.</text>
+<g font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" fill="#dbe3ff">
+<rect x="80" y="470" width="300" height="52" rx="26" fill="#ffffff14" stroke="#ffffff33"/><text x="230" y="504" text-anchor="middle">ACCV 2026 · Accepted</text>
+<rect x="396" y="470" width="344" height="52" rx="26" fill="#ffffff14" stroke="#ffffff33"/><text x="568" y="504" text-anchor="middle">Zalo AI Challenge · 2nd</text>
+<rect x="756" y="470" width="296" height="52" rx="26" fill="#ffffff14" stroke="#ffffff33"/><text x="904" y="504" text-anchor="middle">VLSP 2026 · #6</text></g>
+<text x="80" y="580" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="22" fill="#8c95b8">khoalearningcode.github.io</text>
+</svg>
