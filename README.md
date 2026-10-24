@@ -23,5 +23,6 @@ Content is based on the supplied CV and project README files. MonoLaDN acceptanc
 - `python3 scripts/check_site.py` validates local file references (including Open Graph images), alt text, per-page description and Open Graph/Twitter tags, canonical URLs and the sitemap. It runs on every push through `.github/workflows/check.yml`.
 - `assets/site.css` is the only stylesheet. `assets/main.js` handles theme, filters, dialogs and the motion toggle; `assets/fx.js` handles reveal and card effects.
 - Social preview image: `assets/og-image.svg` (source) and `assets/og-image.png` (1200×630, referenced by every page).
-- Filters with no entries (currently Self Project) are hidden automatically.
+- Filter counts are computed from the cards. There is no Self Project filter yet: when a first self project exists, add the card with `data-category="self-project"` and a `data-filter="self-project"` button.
+- Case studies start with an "At a glance · My role" block; the lightbox supports zoom (buttons, double-click, +/-) and drag to pan.
 - The hero has no portrait for now; add a portrait card next to `.hero-copy` in `index.html` when a photo is available.
