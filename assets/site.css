@@ -725,3 +725,8 @@ header nav{gap:13px}
 .dialog-zoom button:hover{border-color:var(--blue);color:var(--blue)}
 .dialog-zoom span{font-size:12px;font-weight:550}
 .dialog-stage+p::before{content:'Double-click or use + / − to zoom, drag to pan. ';color:var(--blue)}
+
+/* Minimum readable size for remaining small labels */
+.role-label,.hero-note span,.work-filter-bar button span,footer p,.case-hero .eyebrow,.eyebrow{font-size:11.5px}
+.career-glance span,.timeline-date,.career-panel article>span,.entry-kind,.profile-facts span{font-size:11.5px}
+.timeline-date span{font-size:11.5px}
