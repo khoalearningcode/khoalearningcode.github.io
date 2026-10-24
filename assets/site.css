@@ -730,3 +730,8 @@ header nav{gap:13px}
 .role-label,.hero-note span,.work-filter-bar button span,footer p,.case-hero .eyebrow,.eyebrow{font-size:11.5px}
 .career-glance span,.timeline-date,.career-panel article>span,.entry-kind,.profile-facts span{font-size:11.5px}
 .timeline-date span{font-size:11.5px}
+
+/* One-line company descriptions on the career timeline */
+.company-note{font-size:14px;color:var(--muted);margin:-6px 0 16px;line-height:1.6}
+.company-note a{color:var(--blue);white-space:nowrap}
+.timeline-entry .company-note a{font-size:inherit}
