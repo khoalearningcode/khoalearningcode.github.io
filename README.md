@@ -10,13 +10,13 @@ Content is based on the supplied CV and project README files. MonoLaDN acceptanc
 
 ## Site structure
 
-- `index.html`: overview, career preview, and work filtered by activity type.
+- `index.html`: editorial story (identity → motivation → evidence → selected work → experience → long-term direction → contact), plus shareable work filters.
 - `career.html`: professional timeline, education, and milestones.
 - Work categories: Research / Industry / Self Project / Challenge.
 - `projects/`: individual case studies, returning to their selected category.
 - Filter selections are shareable through `?filter=research#work` and equivalent category links.
 - Legacy `channels/` URLs redirect to the filtered work section.
-- Shared navigation: About / Career / Work / Contact.
+- Shared navigation on the redesigned homepage: About / Work / Career / Contact.
 
 ## Checks and maintenance
 
@@ -25,4 +25,4 @@ Content is based on the supplied CV and project README files. MonoLaDN acceptanc
 - Social preview image: `assets/og-image.svg` (source) and `assets/og-image.png` (1200×630, referenced by every page).
 - Filter counts are computed from the cards. There is no Self Project filter yet: when a first self project exists, add the card with `data-category="self-project"` and a `data-filter="self-project"` button.
 - Case studies start with an "At a glance · My role" block; the lightbox supports zoom (buttons, double-click, +/-) and drag to pan.
-- The hero has no portrait for now; add a portrait card next to `.hero-copy` in `index.html` when a photo is available.
+- The homepage intentionally uses a text-first hero and a current-work/long-term-direction compass rather than stock or placeholder AI imagery. AI Infrastructure is a career ambition, not a claim of production-scale deployment experience.
