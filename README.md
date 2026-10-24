@@ -24,4 +24,4 @@ Content is based on the supplied CV and project README files. MonoLaDN acceptanc
 - `assets/site.css` is the only stylesheet. `assets/main.js` handles theme, filters, dialogs and the motion toggle; `assets/fx.js` handles reveal and card effects.
 - Social preview image: `assets/og-image.svg` (source) and `assets/og-image.png` (1200×630, referenced by every page).
 - Filters with no entries (currently Self Project) are hidden automatically.
-- Replace the hero placeholder by adding `assets/portrait.jpg` (4:5) and changing the `<img src>` in `index.html`.
+- The hero has no portrait for now; add a portrait card next to `.hero-copy` in `index.html` when a photo is available.

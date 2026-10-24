@@ -32,8 +32,21 @@ for page in sorted(pages):
     for img in re.findall(r'<img\b[^>]*>', html):
         if 'alt=' not in img:
             errors.append(f'{rel}: <img> without alt: {img[:70]}')
+    if not re.search(r'<html[^>]*\blang="', html):
+        errors.append(f'{rel}: <html> has no lang attribute')
+    ids = re.findall(r'\bid="([^"]+)"', html)
+    for dup in sorted({i for i in ids if ids.count(i) > 1}):
+        errors.append(f'{rel}: duplicate id "{dup}"')
+    if rel.name != '404.html' and len(re.findall(r'<h1[\s>]', html)) != 1:
+        errors.append(f'{rel}: expected exactly one <h1>')
+    for btn in re.findall(r'<button\b[^>]*>(?:(?!</button>).)*</button>', html, flags=re.S):
+        label = re.sub(r'<[^>]+>', '', btn).strip() or ' '.join(re.findall(r'<img[^>]*\balt="([^"]+)"', btn))
+        if not label and 'aria-label=' not in btn:
+            errors.append(f'{rel}: button without accessible name')
     if rel.name == '404.html':
         continue
+    if 'property="og:image:alt"' not in html:
+        errors.append(f'{rel}: missing og:image:alt')
     desc = re.search(r'<meta name="description" content="([^"]*)"', html)
     if not desc:
         errors.append(f'{rel}: no meta description')
