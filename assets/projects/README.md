@@ -21,3 +21,8 @@
 - `vitnumchart-{solution,framework,evidence}.{png,drawio}` from `khoalearningcode/vitnumchart-vlsp2026`, `assets/figures/`, same commit title (2026-10-23).
 - They replace `*-architecture.*` on the challenge case studies and home cards; the old architecture files are no longer referenced.
 - Frames, plate strings, questions and probabilities in the figures are illustrative, not organizer data.
+
+## Company logos, 2026-10-24
+
+- `assets/logos/agilemark.png`: from agilemark.com (media file used by the site header). `assets/logos/eyecode.jpg`: from eyecodetech.com/images/logo-eyecode.jpg. `assets/logos/fizo.jpg`: from fizo.vn/wp-content/uploads/2023/11/logo-fizo.jpeg.
+- Logos are trademarks of their owners and are shown only to identify employers on the career page.

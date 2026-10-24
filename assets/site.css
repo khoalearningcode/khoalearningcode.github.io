@@ -735,3 +735,7 @@ header nav{gap:13px}
 .company-note{font-size:14px;color:var(--muted);margin:-6px 0 16px;line-height:1.6}
 .company-note a{color:var(--blue);white-space:nowrap}
 .timeline-entry .company-note a{font-size:inherit}
+
+/* Company logos on the career timeline: light chip so every logo reads in both themes */
+.company-logo{display:flex;align-items:center;justify-content:center;width:112px;height:48px;margin:0 0 14px;padding:4px 8px;border-radius:10px;background:var(--logo-bg,#fff);border:1px solid var(--line);overflow:hidden}
+.company-logo img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
