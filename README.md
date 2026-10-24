@@ -1,5 +1,7 @@
 # Cao Lê Minh Khoa — Portfolio
 
+**Live site: https://khoalearningcode.github.io/**
+
 Static portfolio for GitHub Pages. Edit `index.html`, case studies in `projects/`, and shared styles in `assets/style.css`. No build step or package installation is required.
 
 Local preview: `python3 -m http.server 4173` from this directory.
