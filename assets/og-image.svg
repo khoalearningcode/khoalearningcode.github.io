@@ -4,7 +4,7 @@
 <radialGradient id="g2" cx=".9" cy=".85" r=".55"><stop offset="0" stop-color="#22d3ee" stop-opacity=".28"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient></defs>
 <rect width="1200" height="630" fill="#0b0d14"/><rect width="1200" height="630" fill="url(#g1)"/><rect width="1200" height="630" fill="url(#g2)"/>
 <rect x="80" y="86" width="64" height="6" rx="3" fill="url(#a)"/>
-<text x="80" y="160" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" letter-spacing="4" fill="#94a9ff">AI ENGINEER &amp; MULTIMODAL RESEARCH</text>
+<text x="80" y="160" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" letter-spacing="4" fill="#94a9ff">AI ENGINEER · RELIABLE AI SYSTEMS</text>
 <text x="80" y="300" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="104" font-weight="700" fill="#f4f6ff">Cao Lê Minh</text>
 <text x="80" y="408" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="104" font-weight="700" fill="url(#a)">Khoa.</text>
 <g font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="24" fill="#dbe3ff">

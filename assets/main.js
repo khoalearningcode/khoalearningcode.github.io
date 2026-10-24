@@ -46,6 +46,11 @@ function applyWorkFilter(category, updateUrl = false) {
   }
 }
 if (cards.length) {
+  // Hide filters that have no entries yet instead of showing an empty "00" tab.
+  document.querySelectorAll('[data-filter]').forEach(button => {
+    const key = button.dataset.filter;
+    if (key !== 'all' && !cards.some(card => card.dataset.category === key)) button.hidden = true;
+  });
   applyWorkFilter(new URLSearchParams(location.search).get('filter') || 'all');
   document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => applyWorkFilter(button.dataset.filter, true)));
 }
