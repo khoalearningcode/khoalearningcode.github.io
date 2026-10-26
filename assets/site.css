@@ -877,3 +877,23 @@ header nav{gap:13px}
 .career-bridge{padding:19px;display:block}
 .career-bridge p{margin:10px 0}
 }
+
+/* AITech is academic research, presented separately from industry employment. */
+.academic-research{margin-top:32px}
+.academic-research .timeline-entry{padding-top:32px}
+.career-lane>.timeline-entry:last-of-type{border-left-color:transparent}
+.research-affiliation{display:flex;align-items:center;gap:22px;flex-wrap:wrap;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:20px 24px;margin-top:30px;transition:border-color .2s,transform .2s}
+.research-affiliation:hover{border-color:var(--blue);transform:translateY(-2px)}
+.research-affiliation:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.research-affiliation-meta{font:11px monospace;color:var(--blue);letter-spacing:.5px}
+.research-affiliation-body{display:flex;flex:1;min-width:195px;flex-direction:column;gap:5px}
+.research-affiliation-body strong{font-size:16px;font-weight:600}
+.research-affiliation-body small{font-size:13px;color:var(--muted)}
+.research-affiliation-arrow{font-size:20px;color:var(--blue)}
+@media(max-width:640px){
+  .research-affiliation{gap:10px 18px;padding:19px}
+  .research-affiliation-meta{width:100%;font-size:10px}
+  .research-affiliation-body strong{font-size:15px}
+  .research-affiliation-body small{font-size:12px}
+  .academic-research{margin-top:24px}
+}
